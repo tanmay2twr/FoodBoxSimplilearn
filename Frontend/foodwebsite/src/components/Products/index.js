@@ -92,9 +92,7 @@ const Products = ({ data, calledFrom }) => {
     console.log(formData);
     axios
       .post("http://localhost:9091/foodcart/addToCart", formData)
-      .then((response) => {
-        alert("successfull");
-      })
+      .then((response) => {})
       .catch((error) => {
         alert(error.response.data);
       });
@@ -164,21 +162,16 @@ const Products = ({ data, calledFrom }) => {
                     </ProductPrice>
                     {calledFrom === "User" && (
                       <FormControl className={classes.formControl}>
-                        <InputLabel id="demo-simple-select-helper-label">
-                          Age
-                        </InputLabel>
-                        <Select
-                          labelId="demo-simple-select-helper-label"
-                          id="demo-simple-select-helper"
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
                           onChange={(event) => addToCart(event, product)}
                         >
-                          <MenuItem value="">
-                            <em>Add To Cart</em>
-                          </MenuItem>
-                          <MenuItem value={1}>1</MenuItem>
-                          <MenuItem value={2}>2</MenuItem>
-                          <MenuItem value={3}>3</MenuItem>
-                        </Select>
+                          <option selected>Add To Cart</option>
+                          <option value={1}>1</option>
+                          <option value={2}>2</option>
+                          <option value={3}>3</option>
+                        </select>
                       </FormControl>
                     )}
                     {calledFrom === "Admin" && (
