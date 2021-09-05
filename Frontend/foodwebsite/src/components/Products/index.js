@@ -92,7 +92,7 @@ const Products = ({ data, calledFrom }) => {
     console.log(formData);
     axios
       .post("http://localhost:9091/foodcart/addToCart", formData)
-      .then((response) => {})
+      .then((response) => {alert("Item Added To Cart!")})
       .catch((error) => {
         alert(error.response.data);
       });

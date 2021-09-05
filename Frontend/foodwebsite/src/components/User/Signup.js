@@ -18,6 +18,15 @@ export class Signup extends Component {
   handleChange = (name) => (event) => {
     this.setState({ ...this.state, [name]: event.target.value });
   };
+  /***
+   * else if (
+      this.state.password === "" &&
+      this.state.email === "" &&
+      this.state.username === ""
+    ) {
+      alert("All Fields are mandatory!");
+    } 
+   */
   checkPassword = (event) => {
     if (this.state.password === this.state.confirmpassword) {
       this.handleSubmit(event);
@@ -63,12 +72,11 @@ export class Signup extends Component {
                 <form onSubmit={this.checkPassword}>
                   <h2>Create an account</h2>
                   <input
-                    type="text"
-                    name=""
+                    type="text" 
                     placeholder="Username"
-                    autofocus="autofocus"
                     value={fullname}
                     onChange={this.handleChange("fullname")}
+                    required
                   />
                   <input
                     type="email"
@@ -76,6 +84,7 @@ export class Signup extends Component {
                     placeholder="Email"
                     value={email}
                     onChange={this.handleChange("email")}
+                    required
                   />
                   <input
                     type="password"
@@ -83,6 +92,7 @@ export class Signup extends Component {
                     placeholder="Password"
                     value={password}
                     onChange={this.handleChange("password")}
+                    required
                   />
                   <input
                     type="password"
@@ -90,6 +100,7 @@ export class Signup extends Component {
                     placeholder="Confirm Password"
                     value={confirmpassword}
                     onChange={this.handleChange("confirmpassword")}
+                    required
                   />
                   <input type="submit" name="" value="Sign Up" />
                   <p class="signup">
