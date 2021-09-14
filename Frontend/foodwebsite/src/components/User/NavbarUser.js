@@ -48,15 +48,6 @@ function NavbarUser() {
                 >
                   Dasboard
                 </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/user/dashboard"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Add Photo
-                </Link>
               </li>{" "}
               <li className="nav-item">
                 <Link

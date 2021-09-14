@@ -60,6 +60,7 @@ export class Signin extends Component {
                     value={email}
                     onChange={this.handleChange("email")}
                     autofocus="autofocus"
+                    required
                   />
                   <input
                     type="password"
@@ -67,6 +68,7 @@ export class Signin extends Component {
                     placeholder="Password"
                     value={password}
                     onChange={this.handleChange("password")}
+                    required
                   />
                   <input type="submit" name="" value="Login" />
                   <p class="signup">
